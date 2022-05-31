@@ -66,6 +66,13 @@ describe('multiply', () => {
     expect(actual).toBe(expected);
   });
 
+  // added for extension:
+  test('can multiply two negative numbers', () => {
+    expected = 2278;
+    actual = multiply(-67, -34);
+    expect(actual).toBe(expected);
+  });
+
 });
 
 describe('divide', () => {
@@ -79,6 +86,13 @@ describe('divide', () => {
   test('can divide by 1', () => {
     expected = 23;
     actual = divide(23, 1);
+    expect(actual).toBe(expected);
+  });
+
+  // added for extension:
+  test('can divide by 0?', () => {
+    expected = Infinity;
+    actual = divide(23, 0);
     expect(actual).toBe(expected);
   });
 
@@ -98,6 +112,18 @@ describe('modulus', () => {
     expect(actual).toBe(expected);
   });
 
+  // added for extension:
+  test('can modulus 0', () => {
+    actual = modulus(29, 0);
+    expect(actual).toBeNaN();
+  });
+
+  test('can modulus decimal', () => {
+    expected = 2.5400000000000014;
+    actual = modulus(29, 3.78);
+    expect(actual).toBe(expected);
+  });
+
 });
 
 describe('even', () => {
@@ -111,6 +137,19 @@ describe('even', () => {
   test('can test odd', () => {
     expected = false;
     actual = even(23);
+    expect(actual).toBe(expected);
+  });
+
+  // added for extension:
+  test('can test decimal', () => {
+    expected = false;
+    actual = even(3.4);
+    expect(actual).toBe(expected);
+  });
+
+  test('can test negative', () => {
+    expected = true;
+    actual = even(-34);
     expect(actual).toBe(expected);
   });
 
